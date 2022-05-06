@@ -1,6 +1,3 @@
-from distutils.log import error
-
-
 n=int(input())
 prime=list(map(int,input().split(" ")))
 result=0
