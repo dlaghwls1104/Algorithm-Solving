@@ -1,8 +1,9 @@
-n= int(input())
+n = int(input())
 
-graph=[[] for _ in range(n+1)]
-for _ in range(n-1):
-    a,b = map(int,input().split())
-    graph[a].append(b)
-    graph[b].append(a)
-print(len(graph))
+while n != 1:
+    if n%2 == 1:
+        n= 3*n+1
+        print(n)
+    else:
+        n=n//2
+        print(n)
