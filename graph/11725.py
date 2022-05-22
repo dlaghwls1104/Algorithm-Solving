@@ -12,13 +12,16 @@ for _ in range(n-1):
     graph[a].append(b)
     graph[b].append(a)
 
+visited = [0]*(n+1)
+def dfs(graph,root):
+    for i in graph[root]:
+        if visited[i] == 0:
+            visited[i] = root
+            dfs(graph,i)
 
-def dfs(n):
-    for i in graph[n]:
-        if visited[i] == -1:
-            visited[i] = n
-            dfs(i)
-dfs(1)
+    return True
+
+dfs(graph,1)
 for i in range(2,n+1):
     print(visited[i])
-    
+
