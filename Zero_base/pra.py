@@ -1,3 +1,3 @@
-answer=[1, 2, 3, 4, 5, 6, 7, 8]
-reverse_an=sorted(answer,reverse=True)
-print(reverse_an)
+answer=[1, 4, 3, 2, 5, 8, 7, 6]
+answer.sort()
+print(answer)
