@@ -1,7 +1,23 @@
-array=[0 for _ in range(11)]
-array[0]=0
-array[1]=1
-for i in range(1,10):
-    array[i+1]=array[i]+array[i-1]
+import copy
+operators=[]
+def recur(arr,m):
+    if len(arr)==m:
+        operators.append(copy.deepcopy(arr))
+        return
 
-print(array)
+    arr.append(' ')
+    recur(arr, m)
+    print(arr)
+    arr.pop()
+
+    arr.append('+')
+    recur(arr, m)
+    print(arr)
+    arr.pop()
+
+    arr.append('-')
+    recur(arr, m)
+    print(arr)
+    arr.pop()
+    
+recur([],2)
